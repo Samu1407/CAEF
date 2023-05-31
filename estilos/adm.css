@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 50px;
+  }
+  
+  .pesquisa-form {
+    margin: 20px auto;
+    width: 400px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-group {
+    margin-right: 10px;
+  }
+  
+  .pesquisa-form label {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+  }
+  
+  .pesquisa-form input[type="text"] {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  h2 {
+    margin-top: 50px;
+  }
+  
+  .tabela {
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    border: 1px solid black;
+  }
+  
+  th {
+    background-color: #920909;
+  }
+  
+  .cor-letra {
+    color: #fff;
+  }
+  
