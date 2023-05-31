@@ -1,0 +1,303 @@
+body {
+    background-color: #920909;
+    color: black;
+  }
+  
+  .form-header {
+    margin-bottom: 30px;
+    text-align: center;
+    bottom: 0;
+  }
+  
+  .letra {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .data {
+    position: relative;
+  }
+  
+  .data input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .data .form-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.2s ease-out;
+  }
+  
+  .data input:focus + .form-label,
+  .data input:valid + .form-label {
+    font-size: 12px;
+    top: 0;
+    transform: translateY(0);
+    background-color: transparent;
+    padding: 2px 5px;
+  }
+  
+  .container-hora {
+    display: flex;
+  }
+  
+  .hora {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .hora input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .select-esporte,
+  .select-material {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .select-esporte option:first-child,
+  .select-material option:first-child {
+    color: #999;
+  }
+  
+  .terms {
+    margin-bottom: 20px;
+  }
+  
+  .terms h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .terms p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .terms a {
+    color: #920909;
+    text-decoration: none;
+  }
+  
+  .terms a:hover {
+    text-decoration: underline;
+  }
+  
+  .termos-container label {
+    font-size: 14px;
+  }
+  
+  .section {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .section .section-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .reserva-form {
+    position: relative;
+    left: 15px;
+    max-width: 645px;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    overflow: hidden;
+    background-size: cover;
+    border-radius: 5px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+  }
+  
+  .reserva-form::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+  }
+  
+  .reserva-form .form-header {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+  
+  .reserva-form .form-header h1 {
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 30px;
+    margin: 0px;
+    color: #000;
+    text-align: center;
+  }
+  
+  .reserva-form .grupo {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .reserva-form .form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 60px;
+    padding: 0px 25px;
+    border: none;
+    border-radius: 40px;
+    color: #000;
+    -webkit-box-shadow: 0px 0px 0px 2px transparent;
+    box-shadow: 0px 0px 0px 2px transparent;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  
+  .reserva-form .form-control::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .reserva-form .form-control:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .reserva-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .reserva-form .form-control:focus {
+    -webkit-box-shadow: 0px 0px 0px 2px #920909;
+    box-shadow: 0px 0px 0px 2px #920909;
+  }
+  
+  .reserva-form input[type="date"].form-control {
+    padding-top: 16px;
+  }
+  
+  .reserva-form input[type="date"].form-control:invalid {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .reserva-form input[type="date"].form-control+.form-label {
+    opacity: 1;
+    top: 10px;
+  }
+  
+  .reserva-form select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .reserva-form select.form-control:invalid {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .reserva-form select.form-control+.select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    text-align: center;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+  }
+  
+  .reserva-form select.form-control+.select-arrow:after {
+    content: '\279C';
+    display: block;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  
+  .reserva-form select.form-control option {
+    color: #000;
+  }
+  
+  .reserva-form .form-label {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    opacity: 0;
+    color: black;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    height: 15px;
+    line-height: 15px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .reserva-form .grupo.input-not-empty .form-control {
+    padding-top: 16px;
+  }
+  
+  .reserva-form .grupo.input-not-empty .form-label {
+    opacity: 1;
+    top: 10px;
+  }
+  
+  .reserva-form .submit-btn {
+    color:#fff;
+    background-color: #920909;
+    font-weight: 700;
+    height: 50px;
+    padding: 10px 30px;
+    width: 240px;
+    border-radius: 40px;
+    border: none;
+    position: relative;
+    left: 170px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.3px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .reserva-form .submit-btn:hover,
+  .reserva-form .submit-btn:focus {
+    opacity: 0.9;
+  }
+  
+  .modal-footer .btn-secondary {
+  background-color: #920909;
+  border-color: #920909;
+  }
