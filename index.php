@@ -23,6 +23,7 @@ $retorno = mysqli_query($conexao,$sql);
 
 if(mysqli_num_rows($retorno)>0){
 echo"Horário já escolhido<br>";
+header("location: arquivo.html");
 }else{
 $dia = $_POST['dia'];
 echo $dia;
@@ -39,10 +40,14 @@ echo $sql;
 
 $resultado = mysqli_query($conexao, $sql);
 echo">>Horário reservado com sucesso!<br>";
+
 }
 
     
 ?>
+
+
+
 
 </body>
 </html>
