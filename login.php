@@ -37,7 +37,7 @@ if (isset($_POST['email'])|| $_POST['senha']) {
 		$sql_query = $mysqli->query($sql_code) or die("ERROU". $mysqli->error);
 
         if($_POST['email'] == "ADMCEAF" && $_POST['senha'] == "CEAF"){
-            header("Location: administrador.html");
+            header("Location: administrador.php");
         }else{
 		$quantidade = $sql_query->num_rows;
 
@@ -53,7 +53,7 @@ if (isset($_POST['email'])|| $_POST['senha']) {
 
 			header("Location: arquivo.html");
 		}else{
-			echo "Não existe";
+			echo "<script> alert('Usuario ou senha incorreto');<script>";
             header("Location: telalogin.html");
 		}
     }

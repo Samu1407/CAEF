@@ -51,4 +51,30 @@ body {
   .cor-letra {
     color: #fff;
   }
+  .excel-style {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .excel-style th, .excel-style td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .excel-style th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .excel-style td {
+    text-align: center;
+  }
+  
+  .excel-style tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .excel-style tr:hover {
+    background-color: #e2e2e2;
+  }
   

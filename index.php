@@ -17,13 +17,24 @@ echo "Error";
 echo"Connection";
 //recuperar e verificar se existe
 $horario_entrada = $_POST['horario_entrada'];
+$horario_saida = $_POST['horario_saida'];
+$quadra = $_POST['quadra'];
 $horario_entrada = mysqli_real_escape_string($conexao,$horario_entrada);
 $sql = "SELECT horario_inicio FROM teste.dados  WHERE horario_inicio = '$horario_entrada'";
+$sql1 = "SELECT horario_fim FROM teste.dados  WHERE horario_fim = '$horario_saida'";
+$pesquisa ="SELECT quadra FROM teste.dados WHERE quadra = '$quadra' and  horario_inicio = '$horario_entrada' and horario_fim = '$horario_saida'";
+echo "$pesquisa<br>";
 $retorno = mysqli_query($conexao,$sql);
+$retorno1 = mysqli_query($conexao,$sql1);
+$consulta = mysqli_query($conexao,$pesquisa);
 
-if(mysqli_num_rows($retorno)>0){
+if(mysqli_num_rows($retorno)>0 || mysqli_num_rows($retorno1)>0){
 echo"Horário já escolhido<br>";
 header("location: arquivo.html");
+}else if(mysqli_num_rows($consulta)>0){
+
+    echo"Quadra já reservada no horário<br>";
+
 }else{
 $dia = $_POST['dia'];
 echo $dia;
@@ -35,7 +46,8 @@ $esporte = $_POST['esporte'];
 echo $esporte;
 $material = $_POST['material'];
 echo $material;
-$sql = "INSERT INTO teste.dados(dias,horario_inicio,horario_fim,esporte,material_apoio) values ('$dia','$horario_entrada','$horario_saida','$esporte','$material')";
+$quadra = $_POST['quadra'];
+$sql = "INSERT INTO teste.dados(dias,horario_inicio,horario_fim,esporte,material_apoio,quadra) values ('$dia','$horario_entrada','$horario_saida','$esporte','$material','$quadra')";
 echo $sql;
 
 $resultado = mysqli_query($conexao, $sql);

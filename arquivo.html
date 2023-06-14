@@ -36,8 +36,8 @@
                                 <div class="col-md-6">
                                     <div class="grupo">
                                         <div class="container-hora">
-                                            <div class="hora">
-                                                <input class="form-control" type="time" name="horario_entrada" required>
+                                            <div >
+                                                <input class="form-control" type="time" name="horario_entrada" min="08:00" max="20:00" required>
                                             </div>
                                             <div class="hora">
                                                 <input class="form-control" type="time" name="horario_saida" required>
@@ -64,161 +64,172 @@
                                         <label class="material">Material de apoio:</label>
                                         <select class="form-control select-material" name="material" required>
                                             <option value="" selected hidden>Selecione uma opção</option>
-                                            <option>Colete</option>
+                                            <option>Colete/Bola</option>
                                             <option>Bola</option>
                                             <option>Nao sera preciso</option>
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-6">
-                                    <section>
-                                        <div class="terms">
-                                            <h5>Termos de Uso</h5>
-                                            <p>Por favor, leia e aceite os <a href="#" id="termos-link">termos de
-                                                    uso:</a></p>
-                                            <div class="termos-container">
-                                                <label>
-                                                    <input type="checkbox" name="termos" required>
-                                                    Eu aceito os termos de uso.
-                                                </label>
+                                    <div class="grupo">
+                                        <label class="quadra">Quadra</label>
+                                        <select class="form-control select-material" name="quadra" required>
+                                            <option value="" selected hidden>Selecione uma opção</option>
+                                            <option>Quadra 1</option>
+                                            <option>Quadra 2</option>
+                                            <option>Quadra 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <section>
+                                            <div class="terms">
+                                                <h5>Termos de Uso</h5>
+                                                <p>Por favor, leia e aceite os <a href="#" id="termos-link">termos de
+                                                        uso:</a></p>
+                                                <div class="termos-container">
+                                                    <label>
+                                                        <input type="checkbox" name="termos" required>
+                                                        Eu aceito os termos de uso.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="termos" tabindex="-1" role="dialog"
+                                    aria-labelledby="termosLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="termosLabel">Termos de Uso</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Ao reservar uma quadra ou campo de futebol no CEAF do Instituto Mauá
+                                                    de
+                                                    Tecnologia, você
+                                                    concorda em seguir todas as regras e regulamentos estabelecidos pelo
+                                                    CEAF. Isso inclui o
+                                                    uso adequado das instalações e equipamentos, bem como o respeito aos
+                                                    outros usuários.
+                                                    Qualquer dano às instalações ou equipamentos será de
+                                                    responsabilidade do
+                                                    usuário que fez
+                                                    a reserva. Além disso, o usuário concorda em cumprir o horário de
+                                                    entrada e saída reservado
+                                                    e em devolver todos os materiais de apoio emprestados em boas
+                                                    condições.
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Fechar</button>
                                             </div>
                                         </div>
-                                    </section>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal fade" id="termos" tabindex="-1" role="dialog"
-                                aria-labelledby="termosLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="termosLabel">Termos de Uso</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Fechar">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Ao reservar uma quadra ou campo de futebol no CEAF do Instituto Mauá de
-                                                Tecnologia, você
-                                                concorda em seguir todas as regras e regulamentos estabelecidos pelo
-                                                CEAF. Isso inclui o
-                                                uso adequado das instalações e equipamentos, bem como o respeito aos
-                                                outros usuários.
-                                                Qualquer dano às instalações ou equipamentos será de responsabilidade do
-                                                usuário que fez
-                                                a reserva. Além disso, o usuário concorda em cumprir o horário de
-                                                entrada e saída reservado
-                                                e em devolver todos os materiais de apoio emprestados em boas condições.
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Fechar</button>
+                                <div class="modal fade" id="reservaConfirmadaModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="reservaConfirmadaModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="reservaConfirmadaModalLabel">Reserva
+                                                    Confirmada
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Sua reserva foi confirmada com sucesso!</p>
+                                                <p>Dados da reserva:</p>
+                                                <p>Data: <span id="reservaData"></span></p>
+                                                <p>Horario de Início: <span id="reservaHoraInicio"></span></p>
+                                                <p>Horario de Fim: <span id="reservaHoraFim"></span></p>
+                                                <p>Esporte: <span id="reservaEsporte"></span></p>
+                                                <p>Material de apoio: <span id="reservaMaterial"></span></p>
+                                                <p>Foi enviado para o email cadastrado todos os detalhes da reserva.</p>
+                                                <p>Em caso de cancelamento, consulte os passos no email.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Fechar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal fade" id="reservaConfirmadaModal" tabindex="-1" role="dialog"
-                                aria-labelledby="reservaConfirmadaModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="reservaConfirmadaModalLabel">Reserva Confirmada
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Fechar">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Sua reserva foi confirmada com sucesso!</p>
-                                            <p>Dados da reserva:</p>
-                                            <p>Data: <span id="reservaData"></span></p>
-                                            <p>Horario de Início: <span id="reservaHoraInicio"></span></p>
-                                            <p>Horario de Fim: <span id="reservaHoraFim"></span></p>
-                                            <p>Esporte: <span id="reservaEsporte"></span></p>
-                                            <p>Material de apoio: <span id="reservaMaterial"></span></p>
-                                            <p>Foi enviado para o email cadastrado todos os detalhes da reserva.</p>
-                                            <p>Em caso de cancelamento, consulte os passos no email.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Fechar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-                            <script
-                                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-                            <script
-                                src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-                            <script>
-                                document.getElementById("termos-link").addEventListener("click", function (event) {
-                                    event.preventDefault();
-                                    $('#termos').modal('show');
-                                });
-
-                                document.querySelector(".submit-btn").addEventListener("click", function (event) {
-                                    event.preventDefault();
-
-                                    var data = document.querySelector(".data input").value;
-                                    var horaInicio = document.querySelectorAll(".hora input")[0].value;
-                                    var horaFim = document.querySelectorAll(".hora input")[1].value;
-                                    var esporte = document.querySelector(".select-esporte").value;
-                                    var material = document.querySelector(".select-material").value;
-                                    var termosCheckbox = document.querySelector('input[name="termos"]');
-
-                                    if (data && horaInicio && horaFim && esporte && material && termosCheckbox.checked) {
-                                        document.getElementById("reservaData").innerText = data;
-                                        document.getElementById("reservaHoraInicio").innerText = horaInicio;
-                                        document.getElementById("reservaHoraFim").innerText = horaFim;
-                                        document.getElementById("reservaEsporte").innerText = esporte;
-                                        document.getElementById("reservaMaterial").innerText = material;
-
-                                        $('#reservaConfirmadaModal').modal('show');
-                                    } else {
-                                        alert("Por favor, preencha todos os campos e aceite os termos de uso antes de fazer a reserva.");
-                                    }
-                                });
-                            </script>
-                            <div class="form-btn">
-                                <button class="submit-btn">Reservar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="termos" tabindex="-1" role="dialog" aria-labelledby="termosLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="termosLabel">Termos de Uso</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Ao reservar uma quadra ou campo de futebol no CEAF do Instituto Mauá de Tecnologia, você
-                        concorda em seguir todas as regras e regulamentos estabelecidos pelo CEAF. Isso inclui o
-                        uso adequado das instalações e equipamentos, bem como o respeito aos outros usuários.
-                        Qualquer dano às instalações ou equipamentos será de responsabilidade do usuário que fez
-                        a reserva. Além disso, o usuário concorda em cumprir o horário de entrada e saída reservado
-                        e em devolver todos os materiais de apoio emprestados em boas condições.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById("termos-link").addEventListener("click", function (event) {
+        event.preventDefault();
+        $('#termos').modal('show');
+    });
+
+    document.querySelector(".submit-btn").addEventListener("click", function (event) {
+        event.preventDefault();
+
+        var data = document.querySelector(".data input").value;
+        var horaInicio = document.querySelectorAll(".hora input")[0].value;
+        var horaFim = document.querySelectorAll(".hora input")[1].value;
+        var esporte = document.querySelector(".select-esporte").value;
+        var material = document.querySelector(".select-material").value;
+        var termosCheckbox = document.querySelector('input[name="termos"]');
+
+        if (data && horaInicio && horaFim && esporte && material && termosCheckbox.checked) {
+            document.getElementById("reservaData").innerText = data;
+            document.getElementById("reservaHoraInicio").innerText = horaInicio;
+            document.getElementById("reservaHoraFim").innerText = horaFim;
+            document.getElementById("reservaEsporte").innerText = esporte;
+            document.getElementById("reservaMaterial").innerText = material;
+
+            $('#reservaConfirmadaModal').modal('show');
+        } else {
+            alert("Por favor, preencha todos os campos e aceite os termos de uso antes de fazer a reserva.");
+        }
+    });
+</script>
+<div class="form-btn">
+    <button class="submit-btn">Reservar</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="termos" tabindex="-1" role="dialog" aria-labelledby="termosLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termosLabel">Termos de Uso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Ao reservar uma quadra ou campo de futebol no CEAF do Instituto Mauá de Tecnologia, você
+                    concorda em seguir todas as regras e regulamentos estabelecidos pelo CEAF. Isso inclui o
+                    uso adequado das instalações e equipamentos, bem como o respeito aos outros usuários.
+                    Qualquer dano às instalações ou equipamentos será de responsabilidade do usuário que fez
+                    a reserva. Além disso, o usuário concorda em cumprir o horário de entrada e saída reservado
+                    e em devolver todos os materiais de apoio emprestados em boas condições.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </html>
