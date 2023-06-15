@@ -36,11 +36,13 @@
                                 <div class="col-md-6">
                                     <div class="grupo">
                                         <div class="container-hora">
-                                            <div >
-                                                <input class="form-control" type="time" name="horario_entrada" min="08:00" max="20:00" required>
+                                            <div>
+                                                <input class="form-control" type="time" name="horario_entrada"
+                                                    min="08:00" max="20:30" required>
                                             </div>
                                             <div class="hora">
-                                                <input class="form-control" type="time" name="horario_saida" required>
+                                                <input class="form-control" type="time" name="horario_saida" 
+                                                min="8:30" max="21:00" required>
                                             </div>
                                         </div>
                                     </div>
@@ -146,6 +148,7 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
+                                            
                                             <div class="modal-body">
                                                 <p>Sua reserva foi confirmada com sucesso!</p>
                                                 <p>Dados da reserva:</p>
@@ -164,6 +167,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -199,6 +203,7 @@
         }
     });
 </script>
+
 <div class="form-btn">
     <button class="submit-btn">Reservar</button>
 </div>

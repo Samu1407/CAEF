@@ -54,12 +54,12 @@ $colunas->free();
       <div class="col-md-6">
         <form class="pesquisa-form">
           <div class="form-group">
-            <label for="ra">R.A do solicitante:(Em backlog)</label>
+            <label for="ra">Horário entrada:(Em backlog)</label>
             <input type="text" id="ra" name="ra" class="form-control">
           </div>
 
           <div class="form-group">
-            <label for="codigo">Cod. Reservas:  (Em backlog)</label>
+            <label for="codigo">Quadra:  (Em backlog)</label>
             <input type="text" id="codigo" name="codigo" class="form-control">
           </div>
         </form>
@@ -96,5 +96,5 @@ $(document).ready(function() {
       updateTable();});
 
         </script>
-</body>
+'</body>
 </html>
